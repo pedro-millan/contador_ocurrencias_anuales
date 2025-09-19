@@ -18,4 +18,4 @@ Por ejemplo: ¿cuántos lunes hay en 2024?
 Ejecuta el programa en la terminal:
 
 ```bash
-python ejercicio_calendar.py
+python3 ejercicio_calendar.py
