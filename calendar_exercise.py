@@ -28,9 +28,9 @@ class MiCalendario(calendar.Calendar):
                     if dia != 0 and wd == weekday: # descartamos días de relleno (0)
                         contador += 1
         return contador
-            
-year = int(input("Introduce un año: "))
-weekday = int(input("Introduce un día de la semana en forma de número (donde 0 es Lunes y 6 Domingo): "))
 
-c = MiCalendario()
-print(c.count_weekday_in_year(year, weekday))
+if __name__ == "__main__":
+    year = int(input("Introduce un año: "))
+    weekday = int(input("Introduce un día de la semana en forma de número (donde 0 es Lunes y 6 Domingo): "))
+    c = MiCalendario()
+    print(c.count_weekday_in_year(year, weekday))
