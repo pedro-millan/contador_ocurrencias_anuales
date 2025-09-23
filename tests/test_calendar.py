@@ -1,5 +1,5 @@
 import unittest
-from calendar_exercise import MiCalendario, ValorIncorrecto
+from calendar_exercise import MiCalendario, DiaIncorrecto, testeador_dias_semana
 
 class TestMiCalendario(unittest.TestCase):
 
@@ -14,10 +14,10 @@ class TestMiCalendario(unittest.TestCase):
         # En 2024 hay 52 domingos
         self.assertEqual(self.calendario.count_weekday_in_year(2024, 6), 52)
 
-    def test_valor_incorrecto(self):
-        # Lanzará excepción si el número está fuera de rango
-        with self.assertRaises(ValorIncorrecto):
-            self.calendario.count_weekday_in_year(2024, 8)
+    def test_dia_incorrecto(self):
+        # Lanzará excepción si el string introducido no corresponde a ningún día de la semana
+        with self.assertRaises(DiaIncorrecto):
+            testeador_dias_semana("Saturnalia")
 
 if __name__ == '__main__':
     unittest.main()

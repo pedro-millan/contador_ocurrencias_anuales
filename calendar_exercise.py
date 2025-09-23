@@ -23,6 +23,10 @@ class MiCalendario(calendar.Calendar):
                         contador += 1
         return contador
     
+def testeador_dias_semana(dia_semana):
+    if dia_semana not in dias_semana:
+        raise DiaIncorrecto("Error. introduce un día de la semana válido.")
+    
 dias_semana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
 
 if __name__ == "__main__":
@@ -32,15 +36,13 @@ if __name__ == "__main__":
     while True:
             try:
                 dia_semana = input("Introduce el nombre de un día de la semana: ")
-                dia_semana = dia_semana.capitalize(); dia_semana.strip()
-                if dia_semana not in dias_semana:
-                    raise DiaIncorrecto("Error. introduce un día de la semana válido.")
+                dia_semana = dia_semana.strip().lower().capitalize()
+                testeador_dias_semana(dia_semana)
                 weekday = dias_semana.index(dia_semana)
                 break
             except DiaIncorrecto as e:
                 print(e)
-                
-            
+                   
     c = MiCalendario()
     resultado = c.count_weekday_in_year(year, weekday)
     print(resultado)
